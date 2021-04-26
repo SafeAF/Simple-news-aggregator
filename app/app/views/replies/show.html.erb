@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @reply.comment_id %>
+</p>
+
+<p>
+  <strong>Upvotes:</strong>
+  <%= @reply.upvotes %>
+</p>
+
+<p>
+  <strong>Downvotes:</strong>
+  <%= @reply.downvotes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reply.user_id %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @reply.body %>
+</p>
+
+<%= link_to 'Edit', edit_reply_path(@reply) %> |
+<%= link_to 'Back', replies_path %>
