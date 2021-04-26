@@ -8,6 +8,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.text :bio
       t.integer :positive_karma
       t.integer :negative_karma
+      t.boolean :admin
+      t.boolean :moderator
+      
+      t.string :alignment
 
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
