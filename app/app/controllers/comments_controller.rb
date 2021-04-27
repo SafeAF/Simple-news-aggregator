@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
- before_authentication :authenticate_user!, except: [ :index, :show ]
+ before_action :authenticate_user!, except: [ :index, :show ]
 
   # GET /comments or /comments.json
   def index
@@ -22,7 +22,9 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
@@ -50,9 +52,12 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
+
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to post_path(@post), notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +70,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:post_id, :upvotes, :downvotes, :user_id, :body)
+      params.require(:comment).permit(:post_id, :user_id, :body)
     end
 end

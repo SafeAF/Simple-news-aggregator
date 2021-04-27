@@ -7,11 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
 
-      <%= link_to "Submit", new_post_path, class: "btn btn-outline-success mx-2" %>
+
+      <%= link_to "Top", root_path,  class: "btn btn-outline-success mx-2" %>
 
       <% if user_signed_in? %>
+        <%= link_to "Submit", new_post_path, class: "btn btn-outline-success mx-2" %>
         <%= link_to "Logout", destroy_user_session_path, 
           method: :delete, class: "btn btn-outline-success mx-2" %>
+        <%= link_to "Profile", edit_user_registration_path, class: "btn btn-outline-success mx-2" %>
+
+
       <% else %>
       <%= link_to "Login", new_user_session_path, class: "btn btn-outline-success mx-2" %>
        <%= link_to "Register", new_user_registration_path, class: "btn btn-outline-success mx-2" %>

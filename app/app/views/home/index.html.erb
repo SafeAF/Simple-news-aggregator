@@ -5,44 +5,46 @@
 <h4>Not Today. Not Even On My Worst Day.</h4>
 
 
-	<div class="row">
 
 	<div class="row">
 
 		<div class="col-12">
 
+<p id="notice"><%= notice %></p>
+
+
+
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
+      <th scope="col">User</th>
+      <th scope="col">Url</th>
+      <th scope="col">Upvotes</th>
+      <th scope="col">Headline</th>
+      <th scope="col">Body</th>
+  
+
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% @posts.each do |post| %>
+      <tr>
+      	<th scope="row">1</th>
+        <td><%= post.user_id %></td>
+        <td><%= post.url %></td>
+        <td><%= post.upvotes %></td>
+        <td><%= post.headline %></td>
+        <td><%= post.body %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
+
+<br>
+
+
 
 		</div>
 
 	</div>
-</div>

@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2021_04_26_230014) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id", null: false
-    t.integer "upvotes"
-    t.integer "downvotes"
+    t.integer "upvotes", default: 0
+    t.integer "downvotes", default: 0
     t.integer "user_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 2021_04_26_230014) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "url"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 0
+    t.integer "total_comments", default: 0
     t.string "headline"
     t.text "body"
     t.boolean "argument"
@@ -38,8 +39,8 @@ ActiveRecord::Schema.define(version: 2021_04_26_230014) do
 
   create_table "replies", force: :cascade do |t|
     t.integer "comment_id", null: false
-    t.integer "upvotes"
-    t.integer "downvotes"
+    t.integer "upvotes", default: 0
+    t.integer "downvotes", default: 0
     t.integer "user_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
