@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Created at:</strong>
   <%= time_ago_in_words @post.created_at %>
@@ -46,7 +47,9 @@
 <% @post.comments.order(created_at: :desc).each do |c| %>
   <div class="comment">
     <strong><%= c.user.username %></strong>
-    <%= c.body %>
+    <p><%= c.body %></p>
+    <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id) %>
+
 
  
   </div>

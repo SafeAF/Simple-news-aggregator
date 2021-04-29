@@ -1,6 +1,8 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: %i[ show edit update destroy ]
  before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :set_post
+    before_action :set_comment
 
   # GET /replies or /replies.json
   def index
@@ -22,11 +24,15 @@ class RepliesController < ApplicationController
 
   # POST /replies or /replies.json
   def create
-    @reply = Reply.new(reply_params)
+    #@reply = Reply.new(reply_params)
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:comment_id])
+    @reply = @comment.replies.create(params[:reply].permit(:body))
+    @reply.user_id = current_user.id
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: "Reply was successfully created." }
+        format.html { redirect_to post_path(@post), notice: "Reply was successfully created." }
         format.json { render :show, status: :created, location: @reply }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -61,6 +67,14 @@ class RepliesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_reply
       @reply = Reply.find(params[:id])
+    end
+
+    def set_comment
+      @comment = Comment.find(params[:comment_id])
+    end
+
+    def set_post
+      @post = Post.find(params[:post_id])
     end
 
     # Only allow a list of trusted parameters through.

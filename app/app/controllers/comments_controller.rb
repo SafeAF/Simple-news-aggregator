@@ -25,8 +25,6 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:body))
-   # @comment = Comment.new(comment_params.merge(user_id: current_user.id, post_id: @post))
-   # @comment = @post.comments << Comment.new(params[:comment])
     @comment.user_id = current_user.id
 
     respond_to do |format|
