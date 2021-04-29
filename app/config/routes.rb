@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get "u/:username" => "profile#index", as: :profile
   resources :replies
   resources :comments
   resources :posts

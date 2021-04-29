@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Created at:</strong>
+  <%= time_ago_in_words @post.created_at %>
+</p>
+<p>
   <strong>User:</strong>
   <%= @post.user.username %>
 </p>
+
 
 <p>
   <strong>Url:</strong>
@@ -35,6 +40,8 @@
 
 
 <h2>Comments</h2>
+<h3>Post Comment</h3>
+<%= link_to 'New Comment', new_comment_path %>
 
 <% @post.comments.order(created_at: :desc).each do |c| %>
   <div class="comment">

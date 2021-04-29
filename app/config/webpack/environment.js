@@ -3,7 +3,7 @@ const { environment } = require('@rails/webpacker')
 module.exports = environment
 
 
-import { environment } from '@rails/webpacker'
+// import { environment } from '@rails/webpacker'
 
 import { ProvidePlugin } from 'webpack'
 environment.plugins.append('Provide', 
