@@ -41,7 +41,7 @@
 
 <h2>Comments</h2>
 <h3>Post Comment</h3>
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
 
 <% @post.comments.order(created_at: :desc).each do |c| %>
   <div class="comment">
