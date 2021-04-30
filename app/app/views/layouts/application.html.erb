@@ -12,14 +12,18 @@
 
   <body>
 
+    
     <div class="container">
     <%= render partial: "layouts/nav" %>
+    <section class="bg-light">
     <%= render partial: "layouts/header" %>
 
     <%= yield %>
 
+    </section>
+  </div>
     <%= render partial: "layouts/footer" %>
 
-  </div>
+
   </body>
 </html>

@@ -14,25 +14,25 @@
   <% end %>
 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :url %>
     <%= form.text_field :url, class: "form-control"  %>
   </div>
 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :headline %>
     <%= form.text_field :headline, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
     <%= form.text_area :body, class: "form-control"  %>
   </div>
 
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit" , class: "btn btn-primary" %>
   </div>
 <% end %>
