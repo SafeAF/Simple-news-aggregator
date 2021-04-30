@@ -14,32 +14,22 @@
 
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">User</th>
-      <th scope="col">Url</th>
-      <th scope="col">Upvotes</th>
-      <th scope="col">Headline</th>
-      <th scope="col">Body</th>
-  
 
-  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-      	<th scope="row">1</th>
-        <td><%= post.user_id %></td>
-        <td><%= post.url %></td>
-        <td><%= post.upvotes %></td>
-        <td><%= post.headline %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
+     
+        
+       <%= post.upvotes %>
+       <%= post.headline %>
+       <%= post.url %>
+       <%= User.find_by_id(post.user_id).username %>
+
+       <%= link_to 'Comments', post %>
+       <%= link_to 'Edit', edit_post_path(post) %>
+       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
