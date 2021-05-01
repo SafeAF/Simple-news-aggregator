@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -61,7 +62,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.includes(:comments).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
