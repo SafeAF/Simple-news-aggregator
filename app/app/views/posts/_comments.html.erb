@@ -16,8 +16,8 @@
                                     <div class="col-8 d-flex">
                                         <h5 class="mr-2"><%= c.user.username %></h5> <p class="mt-1"> <%= time_ago_in_words c.created_at %> ago </p>
                                       <div class="reply ml-3"> 
-                                        <i class="fa fa-reply"></i> 
-                                          <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id) %>
+                                        <i class="fa fa-reply text-danger"></i> 
+                                          <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id), class: "text-danger" %>
                                           
 
                                       </div>
@@ -27,7 +27,10 @@
 
                                 <% if c.replies.any? %>
                                   <% c.replies.order(created_at: :desc).each do |reply| %>
-                                <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://source.unsplash.com/random/200x200" /></a>
+                                <div class="media mt-4"> <a class="pr-3" href="#">
+
+                                <img class="rounded-circle" alt="Bootstrap Media Another Preview" src="https://source.unsplash.com/random/200x200" /></a>
+
                                     <div class="media-body">
                                         <div class="row">
                                             <div class="col-12 d-flex">

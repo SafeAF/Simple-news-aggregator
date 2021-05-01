@@ -20,7 +20,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 
 
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
 
+body a:hover {
+    color: #3a3a3a !important;
+}
 
 
 .card {
