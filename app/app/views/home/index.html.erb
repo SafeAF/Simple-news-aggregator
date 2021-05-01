@@ -19,27 +19,42 @@
        
           <div class="row">
             <div class="col-12">
-              <h5 class="card-title"> <%= post.upvotes %> <%= link_to post.headline, post.url %></h5>
+              <h5 class="card-title"> <%= post.upvotes %> 
+
+
+
+                 <%= link_to post.headline, post.url %></h5>
             </div>
           </div>
 
 
           <div class="row">
-                    <div class="col-2">
-<p class="card-text pull-right">By <%= User.find_by_id(post.user_id).username %> <%= time_ago_in_words post.created_at %> ago</p>
-        </div>
+            <div class="col-4">
+              <p class="card-text pull-right">By <%= User.find_by_id(post.user_id).username %> <%= time_ago_in_words post.created_at %> ago</p>
+            </div>
           
 
-          <div class="col-10">
-            <p>   <%= link_to 'Comments', post %>
-       <% if current_user && (post.user_id == current_user.id ) %>
-       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        (<%= post.url %>)</p>
-        <% end %>
-      </div>
+
+            <div class="col-8">
+             <p class="card-text pull-right"> (<%= post.url %>) </p>
+
+
+          </div>
         </div>
     
-       
+       <div class="row mt-2">
+          <div class="col-4">
+
+
+                <%= link_to "#{post.comments.count} Comments", post, class: "text-light btn btn-success btn-sm" %>
+
+                                 <% if current_user && (post.user_id == current_user.id ) %>
+              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?', class: "btn btn-warning" } %>
+              
+              <% end %>
+        </div>
+
+       </div>
        
 
 
