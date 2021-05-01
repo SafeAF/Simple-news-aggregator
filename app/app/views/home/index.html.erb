@@ -17,18 +17,22 @@
 
     <% @posts.each do |post| %>
       
-     
-        
-       <%= post.upvotes %>
-       <%= post.headline %>
-       <%= post.url %>
-       <%= User.find_by_id(post.user_id).username %>
-
-       <%= link_to 'Comments', post %>
+     <div class="card w-70"> 
+        <div class="card-body">
+          <h5 class="card-title"> <%= post.upvotes %> <%= post.headline %></h5>
+          <p class="card-text"> <%= User.find_by_id(post.user_id).username %> 
+               <%= link_to 'Comments', post %>
        <% if post.user_id == current_user.id %>
        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-       <% end %>
+        <%= post.url %></p>
       
+       
+      
+
+  
+       <% end %>
+        </div>
+      </div>
     <% end %>
 
 
