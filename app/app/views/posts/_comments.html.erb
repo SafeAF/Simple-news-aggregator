@@ -3,11 +3,13 @@
     <strong><%= c.user.username %></strong>
     <%= simple_format c.body %>
     <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id) %>
+    <% if c.replies.any? %>
     <p>Replies</p>
     <% c.replies.order(created_at: :desc).each do |reply| %>
       <p><%= reply.user.username %></p>
       <p><%= reply.body %></p>
    </div>
+   <% end %>
     <% end %>
 
   <% end %>
