@@ -30,14 +30,15 @@
 
           <div class="row">
             <div class="col-4">
-              <p class="card-text pull-right">By <%= User.find_by_id(post.user_id).username %> <%= time_ago_in_words post.created_at %> ago</p>
+              <p class="card-text">By <%= User.find_by_id(post.user_id).username %> <%= time_ago_in_words post.created_at %> ago</p>
             </div>
           
 
 
-            <div class="col-8">
-             <p class="card-text pull-right"> (<%= post.url %>) </p>
-
+            <div class="col-8 pull-right">
+              <div class="url float-right">
+             <p class="card-text"> (<%= post.url %>) </p>
+              </div>
 
           </div>
         </div>
