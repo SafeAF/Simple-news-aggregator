@@ -1,16 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-
-<h1><i class="fas fa-thermometer-full m1-1"></i> <%= @post.headline %></h1>
-
-<p>
-  <strong>Created at:</strong>
-  <%= time_ago_in_words @post.created_at %>
-</p>
-<p>
-  <strong>User:</strong>
-  <%= @post.user.username %>
-</p>
+<div class="container mb-5 mt-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+<h1></i> <%= @post.headline %></h1>
+<h6><%= @post.user.username %> <%= time_ago_in_words @post.created_at %> ago</h6>
 
 
 <p>
@@ -38,6 +33,10 @@
   <%= @post.argument %>
 </p>
 
+</div>
+</div>
+</div>
+</div>
 
 
 

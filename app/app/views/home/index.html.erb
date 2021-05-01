@@ -6,9 +6,7 @@
 
 
 
-	<div class="row">
 
-		<div class="col-12">
 
 <p id="notice"><%= notice %></p>
 
@@ -18,28 +16,42 @@
     <% @posts.each do |post| %>
       
      <div class="card w-70"> 
-        <div class="card-body">
-          <h5 class="card-title"> <%= post.upvotes %> <%= link_to post.headline, post.url %></h5>
-          <p class="card-text"> <%= User.find_by_id(post.user_id).username %> 
-               <%= link_to 'Comments', post %>
+       
+          <div class="row">
+            <div class="col-12">
+              <h5 class="card-title"> <%= post.upvotes %> <%= link_to post.headline, post.url %></h5>
+            </div>
+          </div>
+
+
+          <div class="row">
+                    <div class="col-2">
+<p class="card-text pull-right">By <%= User.find_by_id(post.user_id).username %> <%= time_ago_in_words post.created_at %> ago</p>
+        </div>
+          
+
+          <div class="col-10">
+            <p>   <%= link_to 'Comments', post %>
        <% if current_user && (post.user_id == current_user.id ) %>
        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
         (<%= post.url %>)</p>
-      
-       
-      
-
-  
-       <% end %>
-        </div>
+        <% end %>
       </div>
+        </div>
+    
+       
+       
+
+
+      
+    </div>
+     
     <% end %>
 
-
+ </div>
 <br>
 
 
 
-		</div>
+		
 
-	</div>
