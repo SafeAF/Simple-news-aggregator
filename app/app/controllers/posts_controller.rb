@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show  destroy ]
   before_action :authenticate_user!, except: [ :index, :show ]
   #before_action :set_post, only: [ :show ]
 
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end

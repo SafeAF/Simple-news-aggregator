@@ -25,8 +25,9 @@
        <%= User.find_by_id(post.user_id).username %>
 
        <%= link_to 'Comments', post %>
-       <%= link_to 'Edit', edit_post_path(post) %>
-       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% if post.user_id == current_user.id %>
+       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %>
       
     <% end %>
 
