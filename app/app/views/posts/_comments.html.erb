@@ -14,7 +14,13 @@
                             <div class="media-body">
                                 <div class="row">
                                     <div class="col-8 d-flex">
-                                        <h5><%= c.user.username %></h5> <span>- 2 hours ago</span><div class="reply ml-3"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                        <h5 class="mr-2"><%= c.user.username %></h5> <p class="mt-1"> <%= time_ago_in_words c.created_at %> ago </p>
+                                      <div class="reply ml-3"> 
+                                        <i class="fa fa-reply"></i> 
+                                          <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id) %>
+                                          
+
+                                      </div>
                                     </div>
                               
                                 </div> <%= c.body %> 
@@ -25,7 +31,8 @@
                                     <div class="media-body">
                                         <div class="row">
                                             <div class="col-12 d-flex">
-                                                <h5><%= reply.user.username %></h5> <span>- 3 hours ago</span>
+                                                <h5 class="mr-2"><%= reply.user.username %> </h5> 
+                                                <p class="mt-1"><%= time_ago_in_words reply.created_at %> ago</p>
                                             </div>
                                         </div> <%= reply.body %>
                                     </div>
