@@ -8,18 +8,18 @@
     <ul class="navbar-nav ml-auto">
 
 
-      <%= link_to "Top", root_path,  class: "btn btn-outline-success mx-2" %>
+      <%= link_to "Top", root_path,  class: "btn  text-light btn-outline-success mx-2" %>
 
       <% if user_signed_in? %>
         
-        <%= link_to "Submit", new_post_path, class: "btn btn-outline-success mx-2" %>
+        <%= link_to "Submit", new_post_path, class: "btn text-light btn-outline-success mx-2" %>
  
         
         <div class="dropdown show mx-2">
           <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-             <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+             <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, 
           method: :delete, class: "dropdown-item" %>
        
