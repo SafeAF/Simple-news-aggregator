@@ -17,36 +17,37 @@
 
 @import "bootstrap/scss/bootstrap";
 
-.post-comments {
-  padding-bottom: 9px;
-  margin: 5px 0 5px;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+html,
+body {
+    height: 100%
 }
 
-.comments-nav {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 5px;
+body {
+    display: grid;
+    place-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    
 }
 
-.post-comments .comment-meta {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 5px;
+.card {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164)
 }
 
-.post-comments .media {
-  border-left: 1px dotted #000;
-  border-bottom: 1px dotted #000;
-  margin-bottom: 5px;
-  padding-left: 10px;
-}
-
-.post-comments .media-heading {
-  font-size: 12px;
-  color: grey;
-}
-
-.post-comments .comment-meta a {
-  font-size: 12px;
-  color: grey;
-  font-weight: bolder;
-  margin-right: 5px;
+.media img {
+    width: 60px;
+    height: 60px
 }
