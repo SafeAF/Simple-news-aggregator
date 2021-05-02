@@ -6,10 +6,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       ## Database authenticatable
       t.string :username
       t.text :bio
-      t.integer :positive_karma
-      t.integer :negative_karma
-      t.boolean :admin
-      t.boolean :moderator
+      t.integer :positive_karma, default: 0
+      t.integer :negative_karma, default: 0
+      t.boolean :admin, default: false
+      t.boolean :moderator, default: false
       
       t.string :alignment
 

@@ -1,8 +1,9 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: %i[ show edit update destroy ]
- before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_post
-    before_action :set_comment
+  before_action :set_comment
+  before_action :is_moderator, only: %[ edit update destroy ]
 
   # GET /replies or /replies.json
   def index

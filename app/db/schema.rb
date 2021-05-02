@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 2021_04_26_230014) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.text "bio"
-    t.integer "positive_karma"
-    t.integer "negative_karma"
-    t.boolean "admin"
-    t.boolean "moderator"
+    t.integer "positive_karma", default: 0
+    t.integer "negative_karma", default: 0
+    t.boolean "admin", default: false
+    t.boolean "moderator", default: false
     t.string "alignment"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

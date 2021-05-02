@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	end
   end
 
-  resources :comments, only: [:create]
+  resources :comments
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

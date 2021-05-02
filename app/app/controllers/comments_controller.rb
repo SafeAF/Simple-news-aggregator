@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
-  before_action :set_post
+  before_action :set_post, only: %i[ create new show edit update destroy ]
   before_action :authenticate_user!, except: [ :index, :show ]
-
+  before_action :is_moderator!, only: %[ show index edit update destroy ]
+  
   # GET /comments or /comments.json
   def index
     @comments = Comment.all
