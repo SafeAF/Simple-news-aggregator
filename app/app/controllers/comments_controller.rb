@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
-  before_action :set_post, only: %i[ create new show edit update destroy ]
+  before_action :set_post, only: %i[ create new show edit update ]
   before_action :authenticate_user!, except: [ :index, :show ]
   before_action :is_moderator!, only: %[ show index edit update destroy ]
   
@@ -56,8 +56,9 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+    #@post = Post.find(params[:post_id])
+    #@comment = @post.comments.find(params[:id])
+    @comment = Comment.find(comment_params)
     @comment.destroy
 
     respond_to do |format|
@@ -78,6 +79,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit( :body, :post_id)
+      params.require(:comment).permit( :body, :post_id, :id)
     end
 end

@@ -17,14 +17,15 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.post_id %></td>
+        <td><%= Post.find(comment.post_id) %></td>
         <td><%= comment.upvotes %></td>
         <td><%= comment.downvotes %></td>
-        <td><%= comment.user_id %></td>
+        <td><%= User.find(comment.user_id).username %></td>
         <td><%= comment.body %></td>
-        <td><%= link_to 'Show', post_comments_path %></td>
-        
-        <td><%= link_to 'Destroy', post_comments_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', comments_path %></td>
+        <% if current_user.moderator %>
+        <td><%= link_to 'Destroy', comment_url(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +33,3 @@
 
 <br>
 
-<%= link_to 'New Comment', new_comment_path %>
