@@ -58,11 +58,11 @@ class CommentsController < ApplicationController
   def destroy
     #@post = Post.find(params[:post_id])
     #@comment = @post.comments.find(params[:id])
-    @comment = Comment.find(comment_params)
+    #@comment = Comment.find(comment_params)
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to post_path(@post), notice: "Comment was successfully destroyed." }
+      format.html { redirect_to comments_path, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -79,6 +79,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit( :body, :post_id, :id)
+      params.require(:comment).permit( :body )
     end
 end
