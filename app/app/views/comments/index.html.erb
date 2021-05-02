@@ -24,7 +24,7 @@
         <td><%= comment.body %></td>
         <td><%= link_to 'Show', comments_path %></td>
         <% if current_user.moderator %>
-        <td><%= link_to 'Destroy', comment_url(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
