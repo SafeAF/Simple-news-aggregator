@@ -22,8 +22,8 @@
         <td><%= reply.downvotes %></td>
         <td><%= reply.user_id %></td>
         <td><%= reply.body %></td>
-        <td><%= link_to 'Show', reply %></td>
-        <td><%= link_to 'Edit', edit_reply_path(reply) %></td>
+       
+       
          <% if current_user.moderator %>
         <td><%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
@@ -33,5 +33,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Reply', new_reply_path %>
