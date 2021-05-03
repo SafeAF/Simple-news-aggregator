@@ -18,6 +18,9 @@
                                       <div class="reply ml-3"> 
                                         <i class="fa fa-reply text-danger"></i> 
                                           <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id), class: " text-danger" %>
+                                          <% if current_user.moderator %>
+                                                <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                                          <% end %>
                                           
 
                                       </div>
