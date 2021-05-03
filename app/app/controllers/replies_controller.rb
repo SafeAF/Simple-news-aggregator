@@ -16,6 +16,8 @@ class RepliesController < ApplicationController
 
   # GET /replies/new
   def new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:comment_id])
     @reply = Reply.new
   end
 
@@ -26,9 +28,9 @@ class RepliesController < ApplicationController
   # POST /replies or /replies.json
   def create
     #@reply = Reply.new(reply_params)
-    @post = Post.find(params[:post_id])
-    @comment = Comment.find(params[:comment_id])
-    @reply = @comment.replies.create(params[:reply].permit(:body))
+    #@post = Post.find(params[:post_id])
+    #@comment = Comment.find(params[:comment_id])
+    @reply = Reply.new(reply_params)
     @reply.user_id = current_user.id
 
     respond_to do |format|
@@ -80,6 +82,6 @@ class RepliesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reply_params
-      params.require(:reply).permit(:body)
+      params.require(:reply).permit(:body, :post_id, :comment_id)
     end
 end

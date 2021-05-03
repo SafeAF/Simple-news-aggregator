@@ -17,7 +17,7 @@
                                         <h5 class="mr-2"><%= c.user.username %></h5> <p class="mt-1"> <%= time_ago_in_words c.created_at %> ago </p>
                                       <div class="reply ml-3"> 
                                         <i class="fa fa-reply text-danger"></i> 
-                                          <%= link_to 'Reply', new_post_comment_reply_path(@post, c.id), class: " text-danger" %>
+                                          <%= link_to 'Reply', new_post_comment_reply_path(post_id: @post.id, comment_id: c.id), class: " text-danger" %>
                                           <% if current_user.moderator %>
                                                 <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                                           <% end %>
