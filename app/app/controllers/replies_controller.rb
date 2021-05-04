@@ -18,7 +18,7 @@ class RepliesController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:comment_id])
-    @reply = Reply.new
+    @reply = Reply.new()
   end
 
   # GET /replies/1/edit
@@ -28,9 +28,10 @@ class RepliesController < ApplicationController
   # POST /replies or /replies.json
   def create
     #@reply = Reply.new(reply_params)
-    #@post = Post.find(params[:post_id])
-    #@comment = Comment.find(params[:comment_id])
-    @reply = Reply.new(reply_params)
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:comment_id])
+   # @reply = Reply.new(reply_params)
+   @reply = @comment.replies.create(params[:reply].permit(:body))
     @reply.user_id = current_user.id
 
     respond_to do |format|
