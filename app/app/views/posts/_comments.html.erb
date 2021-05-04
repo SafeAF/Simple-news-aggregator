@@ -39,6 +39,9 @@
                                             <div class="col-12 d-flex">
                                                 <h5 class="mr-2"><%= reply.user.username %> </h5> 
                                                 <p class="mt-1"><%= time_ago_in_words reply.created_at %> ago</p>
+                                                <% if current_user.moderator %>
+                                                <%= link_to 'Destroy', reply_path(reply.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                                          <% end %>
                                             </div>
                                         </div> <%= reply.body %>
                                     </div>
