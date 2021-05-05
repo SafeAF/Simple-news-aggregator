@@ -1,7 +1,8 @@
 <h1>Replies by <%= @user.username %></h1>
 <% @replies.each do |reply|  %>
 
-<%= link_to "#{reply.headline.truncate(70)}", reply %>
+<%= link_to "#{Comment.find(reply.comment_id).body.truncate(70)}", comments_path(comment_id: reply.comment_id) %>
 	<p><%= reply.body.truncate(370) %></p>
 	
 <% end %>
+
