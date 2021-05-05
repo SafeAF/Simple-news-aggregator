@@ -9,14 +9,19 @@
 <h2 class="text-center"><%= @user.username %></h2>
 <p>Postive Karma: <%= @user.positive_karma %></p>
 <p>Negative Karma: <%= @user.negative_karma %></p>
-<p>Joined: <%= @user.created_at %>
-<p><%= link_to "Posts", users_posts_path(@user) %></p>
-<p><%= link_to "Comments", users_comments_path(@user) %></p>
-<p><%= link_to "Replies", users_replies_path(@user) %></p>
+<p>Joined: <%= @user.created_at %></p>
+
 
 <p><%= @user.bio %></p>
 
+</div>
+</div>
+<div class="row">
+            <div class="col-12">
 
+<%= link_to "Posts", users_posts_path(@user), class: "btn btn-success " %>
+<%= link_to "Comments", users_comments_path(@user), class: "btn btn-success ml-2" %>
+<%= link_to "Replies", users_replies_path(@user), class: "btn btn-success ml-2" %>
 
 </div>
 </div>
