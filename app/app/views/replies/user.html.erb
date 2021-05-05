@@ -1,8 +1,26 @@
 <h1>Replies by <%= @user.username %></h1>
 <% @replies.each do |reply|  %>
 
+ <div class="card w-70 mt-3"> 
+       
+          <div class="row">
+            <div class="col-12">
+              <h5 class="card-title card-headline">
 <%= link_to "#{Comment.find(reply.comment_id).body.truncate(70)}", comment_path(id: reply.comment_id, post_id: Comment.find(reply.comment_id).post_id) %>
-	<p><%= reply.body.truncate(370) %></p>
+  </div>
+          </div>
+
+	<div class="row">
+            <div class="col-12">
+              <p class="card-text"><%= reply.body.truncate(370) %>
+              	 </div>
+          </div>
+
+	
+			
+
+	</div>
 	
 <% end %>
+
 
