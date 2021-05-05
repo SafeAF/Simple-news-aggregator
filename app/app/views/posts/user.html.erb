@@ -1,3 +1,7 @@
+
+<h1>Posts by <%= @user.username %></h1>
 <% @posts.each do |post|  %>
-	<p><%= post.body %></p>
+
+<%= link_to "#{post.headline.truncate(70)}", post %>
+	<p><%= post.body.truncate(370) %></p>
 <% end %>

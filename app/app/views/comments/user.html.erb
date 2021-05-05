@@ -1,3 +1,8 @@
+<h1>Comments by <%= @user.username %></h1>
 <% @comments.each do |comment|  %>
-	<p><%= comment.body %></p>
+
+
+<p><%= link_to "#{Post.find(comment.post_id).headline.truncate(70)}" %></p>
+<p><%= link_to "#{comment.body.truncate(370)}", comment_path(post_id: comment.post_id) %></p>
+
 <% end %>

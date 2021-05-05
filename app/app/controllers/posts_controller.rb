@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
 
   def user
-    @posts = Post.where(user_id: params[:id])
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user)
   end
   
   def index

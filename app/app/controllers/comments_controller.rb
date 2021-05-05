@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
   
   # GET /comments or /comments.json
   def user
-    @comments = Comment.where(user_id: params[:id])
+     @user = User.find(params[:id])
+     
+    @comments = Comment.where(user_id: @user)
   end
 
   def index

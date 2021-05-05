@@ -6,7 +6,8 @@ class RepliesController < ApplicationController
   before_action :is_moderator!, only: %[ edit update destroy ]
 
   def user
-    @replies = Reply.where(user_id: params[:id])
+     @user = User.find(params[:id])
+    @replies = Reply.where(user_id: @user)
   end
   # GET /replies or /replies.json
   def index

@@ -1,3 +1,7 @@
+<h1>Replies by <%= @user.username %></h1>
 <% @replies.each do |reply|  %>
-	<p><%= reply.body %></p>
+
+<%= link_to "#{reply.headline.truncate(70)}", reply %>
+	<p><%= reply.body.truncate(370) %></p>
+	
 <% end %>
