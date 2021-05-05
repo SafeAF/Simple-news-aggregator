@@ -1,7 +1,26 @@
 
 <h1>Posts by <%= @user.username %></h1>
 <% @posts.each do |post|  %>
-
+ <div class="card w-70 mt-3"> 
+       
+          <div class="row">
+            <div class="col-12">
+              <h5 class="card-title card-headline"> 
 <%= link_to "#{post.headline.truncate(70)}", post %>
-	<p><%= post.body.truncate(370) %></p>
+    </div>
+          </div>
+
+	<div class="row">
+            <div class="col-12">
+              <p class="card-text"><%= post.body.truncate(370) %>
+              	          </div>
+          </div>
+
+	
+			
+
+	</div>
+
 <% end %>
+
+
