@@ -10,9 +10,9 @@
 <p>Postive Karma: <%= @user.positive_karma %></p>
 <p>Negative Karma: <%= @user.negative_karma %></p>
 <p>Joined: <%= @user.created_at %>
-<p>Posts: <%= link_to "Posts", users_posts_path(@user) %></p>
-<p>Comments: </p>
-<p>Replies: </p>
+<p><%= link_to "Posts", users_posts_path(@user) %></p>
+<p><%= link_to "Comments", users_comments_path(@user) %></p>
+<p><%= link_to "Replies", users_replies_path(@user) %></p>
 
 <p><%= @user.bio %></p>
 

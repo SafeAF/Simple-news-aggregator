@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
   before_action :is_moderator!, only: %[ edit update destroy ]
   
   # GET /comments or /comments.json
+  def user
+    @comments = Comment.where(user_id: params[:id])
+  end
+
   def index
     @comments = Comment.all
   end

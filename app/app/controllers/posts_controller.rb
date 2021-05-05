@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def user
     @posts = Post.where(user_id: params[:id])
   end
+  
   def index
     @posts = Post.all
   end
