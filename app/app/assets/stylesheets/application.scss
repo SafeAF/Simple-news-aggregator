@@ -19,18 +19,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
 
 .header-title {
     font-size: 7em !important;
 }
 
+body p, h3, h4 {
+    font-family: 'Josefin Sans', sans !important;
+}
+
+ h5, h6 {
+     font-family: 'Antonio', sans !important;
+     font-weight: bold;
+}
+
 .card-headline {
     font-size: 2em !important;
 }
 
-body h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     font-family: 'Girassol', serif;
 }
 
