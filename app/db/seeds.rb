@@ -8,3 +8,4 @@
 
 control = Control.create(registrations_enabled: true)
 control.save!
+

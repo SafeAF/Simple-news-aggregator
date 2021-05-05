@@ -4,4 +4,5 @@ class Comment < ApplicationRecord
   has_many :replies
 
   validates_presence_of :body, :user_id, :post_id
+  validates :body, length: { maximum: 1000 }
 end

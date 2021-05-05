@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates_presence_of :username
+  validates :bio, length: { maximum: 10000 }
   has_many :posts
   has_many :comments
   has_many :replies
