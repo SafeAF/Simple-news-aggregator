@@ -1,8 +1,24 @@
 <h1>Comments by <%= @user.username %></h1>
 <% @comments.each do |comment|  %>
 
+     <div class="card w-70 mt-3"> 
+       
+          <div class="row">
+            <div class="col-12">
+              <h5 class="card-title card-headline"> <%= link_to "#{Post.find(comment.post_id).headline.truncate(70)}", post_url(comment.post_id) %>
+            </div>
+          </div>
 
-<p><%= link_to "#{Post.find(comment.post_id).headline.truncate(70)}", post_url(comment.post_id) %></p>
-<p><%= link_to "#{comment.body.truncate(370)}", comment_path(post_id: comment.post_id) %></p>
+          <div class="row">
+            <div class="col-12">
+              <p class="card-text"><%= link_to "#{comment.body.truncate(370)}", comment_path(post_id: comment.post_id) %></p>
+            </div>
+          </div>
+<p></p>
+	
+			
+
+	</div>
+
 
 <% end %>
