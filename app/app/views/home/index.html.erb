@@ -47,7 +47,10 @@
           <div class="col-4">
 
 
-                <%= link_to "#{post.comments.count} Comments", post, class: "text-light btn btn-success btn-sm" %>
+               <%= link_to post, class: "text-light btn btn-success btn-sm" do %>
+                <%= post.comments.count %> <%= "comment".pluralize(post.comments.count) %>
+               <% end %>
+                
 
                                  <% if current_user && (post.user_id == current_user.id ) %>
               <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?', class: "btn btn-warning" } %>
