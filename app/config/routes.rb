@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "/users/:id/posts", to: "posts#user", as: "users_posts"
   get "/users/:id/comments", to: "comments#user", as: "users_comments"
   get "/users/:id/replies", to: "replies#user", as: "users_replies"
+  post "flagged/:id", to: "flagged#create", as: "flagged"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: "home#index"

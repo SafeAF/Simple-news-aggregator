@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_195827) do
+ActiveRecord::Schema.define(version: 2021_05_05_203539) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2021_05_05_195827) do
 
   create_table "controls", force: :cascade do |t|
     t.boolean "registrations_enabled"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "flagged_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "reason"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

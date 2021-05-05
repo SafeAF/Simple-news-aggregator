@@ -27,12 +27,23 @@
                                           <% if current_user.moderator %>
                                                 <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                                           <% end %>
-                                          
-
+                                        
+                                 
                                       </div>
                                     </div>
-                              
-                                </div> <%= c.body %> 
+                                     <div class="row pull-right ">  
+                                    <div class="col-8  d-flex">
+                                           <% if current_user.moderator %>
+                                                <%= link_to "Flag User", flagged_path(user_id: c.user.id), method: :post %>
+                                            <% end %> 
+
+                                    
+
+                                    </div>
+                                </div>
+                                </div> 
+
+                                <%= c.body %> 
 
                                 <% if c.replies.any? %>
                                   <% c.replies.order(created_at: :desc).each do |reply| %>

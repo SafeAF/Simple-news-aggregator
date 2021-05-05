@@ -1,0 +1,3 @@
+class FlaggedUser < ApplicationRecord
+
+end
