@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   #before_action :set_post, only: [ :show ]
 
   # GET /posts or /posts.json
+
+  def user
+    @posts = Post.where(user_id: params[:id])
+  end
   def index
     @posts = Post.all
   end
