@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :comments
   resources :replies 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
   resources :users, only: [:show]
   get "/users/:id/posts", to: "posts#user", as: "users_posts"
   get "/users/:id/comments", to: "comments#user", as: "users_comments"
