@@ -28,7 +28,14 @@
                                                 <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                                           <% end %>
                                         
-                                 
+                                              <div id="like-count"> 
+                <%= render 'comments/likes', comment: @comment %>
+              </div>
+
+              <div id="like-link">
+
+                <%= render 'comments/like_link', comment: @comment %>
+              </div>
                                       </div>
                                     </div>
       
@@ -80,6 +87,15 @@
 
                                     </div>
                                 </div>
+
+                                              <div id="like-count"> 
+                <%= render 'replies/likes', reply: @reply %>
+              </div>
+
+              <div id="like-link">
+
+                <%= render 'replies/like_link', reply: @reply %>
+              </div>
 
                                 </div>
 

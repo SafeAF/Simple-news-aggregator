@@ -3,6 +3,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   has_many :replies
 
-  validates_presence_of :body, :user_id, :post_id
+  acts_as_votable
+  
+  validates_presence_of :body
   validates :body, length: { maximum: 1000 }
 end

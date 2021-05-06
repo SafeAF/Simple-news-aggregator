@@ -1,9 +1,27 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [ :index, :show ]
-  before_action :set_post, only: %[ create new ]
-  before_action :set_comment, only: %[ create new]
+  before_action :set_post, only: %[ create new like ]
+  before_action :set_comment, only: %[ create new like]
   before_action :is_moderator!, only: %[ edit update destroy ]
+
+
+ def like
+
+    if current_user.voted_for? @reply
+      @reply.unliked_by current_user
+    else
+      @reply.liked_by current_user
+    end
+
+    respond_to do |format|
+ 
+    format.html {redirect_to @post}
+    format.json { head :no_content }
+    end
+  end
+
+
 
   def user
      @user = User.find(params[:id])

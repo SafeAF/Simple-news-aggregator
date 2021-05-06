@@ -8,7 +8,13 @@ Rails.application.routes.draw do
     end
 
   	resources :comments do
+          member do
+           put 'like' => 'comments#like'
+    end
   	 resources :replies
+         member do
+          put 'like' => 'replies#like'
+    end
 	 end
   end
 
