@@ -4,6 +4,14 @@
     <div class="card">
         <div class="row">
             <div class="col-md-12">
+            	<div id="like-count"> 
+            		<%= render 'posts/likes', post: @post %>
+            	</div>
+
+            	<div id="like-link">
+
+            		<%= render 'posts/like_link', post: @post %>
+            	</div>
 <h5><%= @post.upvotes %> <%= link_to @post.headline.capitalize, @post.url %></h5></h5>
 <p> <%= link_to "#{@post.user.username}", user_path(@post.user.id) %> <%= time_ago_in_words @post.created_at %> ago</p>
 <p><%= @post.body %></p>
