@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
   
 
    def like
-
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     if current_user.voted_for? @comment
       @comment.unliked_by current_user
     else
@@ -34,6 +35,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1 or /comments/1.json
   def show
+
   end
 
   # GET /comments/new

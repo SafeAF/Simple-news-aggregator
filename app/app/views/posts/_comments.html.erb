@@ -29,12 +29,12 @@
                                           <% end %>
                                         
                                               <div id="like-count"> 
-                <%= render 'comments/likes', comment: @comment %>
+                <%= render 'comments/likes', comment: Comment.find(c.id) %>
               </div>
 
               <div id="like-link">
 
-                <%= render 'comments/like_link', comment: @comment %>
+                <%= render 'comments/like_link', comment: Comment.find(c.id) %>
               </div>
                                       </div>
                                     </div>
@@ -89,12 +89,12 @@
                                 </div>
 
                                               <div id="like-count"> 
-                <%= render 'replies/likes', reply: @reply %>
+                <%= render 'replies/likes', reply: reply %>
               </div>
 
               <div id="like-link">
 
-                <%= render 'replies/like_link', reply: @reply %>
+                <%= render 'replies/like_link', reply: reply %>
               </div>
 
                                 </div>
