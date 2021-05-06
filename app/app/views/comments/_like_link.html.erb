@@ -1,3 +1,3 @@
 <%= vote_text = current_user&.voted_for?(comment) ? "Unlike" : "Like" %>
 
-<%= link_to vote_text, like_post_comment_path(comment_id: comment.id, post_id: @post.id), method: :put, remote: :true, class: 'like-post' %>
+<%= link_to vote_text, like_post_comment_path(comment, post_id: @post.id), method: :put, remote: :true, class: 'like-post' %>
