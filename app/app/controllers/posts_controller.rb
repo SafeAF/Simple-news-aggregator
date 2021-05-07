@@ -18,6 +18,7 @@ class PostsController < ApplicationController
  
     format.html {redirect_to @post}
     format.json { head :no_content }
+    # format.js # add once it is fixed
     end
   end
 

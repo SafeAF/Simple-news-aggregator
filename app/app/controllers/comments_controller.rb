@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
  
     format.html {redirect_to @post}
     format.json { head :no_content }
+   # format.js 
     end
   end
 
@@ -30,7 +31,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all
+    @comments = Comment.all.order(:votes_score).limit(2)
   end
 
   # GET /comments/1 or /comments/1.json

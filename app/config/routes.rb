@@ -11,15 +11,18 @@ Rails.application.routes.draw do
           member do
            put 'like' => 'comments#like'
     end
-  	 resources :replies
-         member do
-          put 'like' => 'replies#like'
-    end
+    	 resources :replies
+           member do
+            put 'like' => 'replies#like'
+      
+     end
 	 end
   end
 
   resources :comments
   resources :replies 
+  # Provides ability to turn on and off registrations via
+  # Control.first.registrations_enabled = true | false
   devise_for :users, controllers: { registrations: "registrations"}
   resources :users, only: [:show]
   get "/users/:id/posts", to: "posts#user", as: "users_posts"

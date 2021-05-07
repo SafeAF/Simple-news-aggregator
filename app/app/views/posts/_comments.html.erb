@@ -88,13 +88,19 @@
                                     </div>
                                 </div>
 
-                                              <div id="like-count"> 
-                <%= render 'replies/likes', reply: reply %>
-              </div>
 
+                                              <div id="like-count"> 
+
+                      <%= render 'replies/likes', reply: Reply.find(reply.id) %>
+              
+
+              </div>
+                                               
+        
               <div id="like-link">
 
-                <%= render 'replies/like_link', reply: reply %>
+               
+                  <%= render 'replies/like_link', reply: Reply.find(reply.id) %>
               </div>
 
                                 </div>
