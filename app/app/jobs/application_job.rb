@@ -4,4 +4,6 @@ class ApplicationJob < ActiveJob::Base
 
   # Most jobs are safe to ignore if the underlying records are no longer available
   # discard_on ActiveJob::DeserializationError
+
+  # config.active_job.queque_adapter = :sidekiq
 end
