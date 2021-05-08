@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy  like ]
-  before_action :set_post, only: %i[ create new show edit update like ]
+  before_action :set_comment, only: %i[ show edit update destroy  like dislike]
+  before_action :set_post, only: %i[ create new show edit update like dislike]
   before_action :authenticate_user!, except: [ :index, :show ]
   before_action :is_moderator!, only: %[ edit update destroy ]
   
@@ -15,12 +15,32 @@ class CommentsController < ApplicationController
     end
 
     respond_to do |format|
- 
+  
+  # format.js # add once it is fixed
     format.html {redirect_to @post}
     format.json { head :no_content }
    # format.js 
     end
   end
+
+   def dislike
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if current_user.voted_for? @comment
+      @comment.disliked_by current_user
+    else
+      @comment.undisliked_by current_user
+    end
+
+    respond_to do |format|
+  
+  # format.js # add once it is fixed
+    format.html {redirect_to @post}
+    format.json { head :no_content }
+ 
+    end
+  end
+
 
 
   # GET /comments or /comments.json

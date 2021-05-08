@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   	resources :comments do
           member do
            put 'like' => 'comments#like'
+           put 'dislike' => 'comments#dislike'
     end
     	 resources :replies
            member do
