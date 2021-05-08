@@ -30,33 +30,27 @@
                                         
                                         <div class="row">
                                           <div class="col">
-                                             <div id="like-count"> 
+
+                                             <div id="comment-like-count"> 
+                                              <%= render 'comments/like_link', comment: Comment.find(c.id) %>
                 <%= render 'comments/likes', comment: Comment.find(c.id) %>
               </div>
 
             </div>
-                            <div id="like-link ">
-
-                <%= render 'comments/like_link', comment: Comment.find(c.id) %>
-              </div>
-                        
+                         
 
             </div>
 
             <div class="row">
 
             <div class="col">
-              <div id="dislike-count"> 
-                <%= render 'comments/dislikes', comment: Comment.find(c.id) %>
+              <div id="comment-dislike-count"> 
+               <%= render 'comments/dislike_link', comment: Comment.find(c.id) %> <%= render 'comments/dislikes', comment: Comment.find(c.id) %>
               </div> 
             </div>
 
              
 
-                        <div id="dislike-link ">
-
-                <%= render 'comments/dislike_link', comment: Comment.find(c.id) %>
-              </div>
             </div>
                                       </div>
                                     </div>
