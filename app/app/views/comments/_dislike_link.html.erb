@@ -1,3 +1,2 @@
-<% vote_text = current_user&.voted_for?(comment) ? "Decrement" : "Increment" %>
 
-<%= link_to vote_text, dislike_post_comment_path(comment, post_id: @post.id), method: :put, remote: :true, class: 'dislike-post' %>
+<%= link_to "Decrement", dislike_post_comment_path(comment, post_id: @post.id), method: :put, remote: :true, class: 'dislike-post' %>

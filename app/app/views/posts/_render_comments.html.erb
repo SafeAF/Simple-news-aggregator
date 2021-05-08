@@ -1,12 +1,4 @@
-
-<div class="container mb-5 mt-5">
-    <div class="card">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-center mb-5"><%= link_to 'New Comment', new_post_comment_path(@post), class: "btn text-dark btn-warning btn-lg" %></h3>
-                <div class="row">
-
-             <% comments.each do |c| %>
+ <% comments.each do |c| %>
 
 
                     <div class="col-md-12 mt-5">
@@ -28,36 +20,28 @@
                                                 <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                                           <% end %>
                                         
-                                        <div class="row">
-                                          <div class="col">
+                                        
                                              <div id="like-count"> 
                 <%= render 'comments/likes', comment: Comment.find(c.id) %>
               </div>
 
-            </div>
-                            <div id="like-link ">
+                            <div id="like-link">
 
                 <%= render 'comments/like_link', comment: Comment.find(c.id) %>
               </div>
                         
 
-            </div>
 
-            <div class="row">
-
-            <div class="col">
               <div id="dislike-count"> 
                 <%= render 'comments/dislikes', comment: Comment.find(c.id) %>
               </div> 
-            </div>
 
              
 
-                        <div id="dislike-link ">
+                        <div id="dislike-link">
 
                 <%= render 'comments/dislike_link', comment: Comment.find(c.id) %>
               </div>
-            </div>
                                       </div>
                                     </div>
       
@@ -134,13 +118,3 @@
                         </div>
                       </div>
                 <% end %>
-
-
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
