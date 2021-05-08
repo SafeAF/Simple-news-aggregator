@@ -3,17 +3,17 @@
 <div class="container mb-5 mt-5">
     <div class="card">
         <div class="row">
-            <div class="col-md-12">
-            	<div id="like-count"> 
-            		<%= render 'posts/likes', post: @post %>
-            	</div>
+            <div class="col-md-12 ">
+            	
+            		
+            	 
+            	
 
-            	<div id="like-link">
+<h5><%= link_to @post.headline.capitalize, @post.url %></h5></h5>
 
-            		<%= render 'posts/like_link', post: @post %>
-            	</div>
-<h5><%= @post.upvotes %> <%= link_to @post.headline.capitalize, @post.url %></h5></h5>
-<p> <%= link_to "#{@post.user.username}", user_path(@post.user.id) %> <%= time_ago_in_words @post.created_at %> ago</p>
+
+            	        
+<p> <%= render 'posts/like_link', post: @post %> <%= render 'posts/likes', post: @post %> | Submitted by <%= link_to "#{@post.user.username}", user_path(@post.user.id) %> <%= time_ago_in_words @post.created_at %> ago</p>
 <p><%= @post.body %></p>
 
 </div>
