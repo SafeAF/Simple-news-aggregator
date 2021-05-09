@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     if current_user.voted_for? @post
       @post.unliked_by current_user
-      @post.user.positive_karma += 1
+      @post.user.positive_karma -= 1
       @post.user.save!
     else
       @post.liked_by current_user
