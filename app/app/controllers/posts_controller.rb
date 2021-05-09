@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
 
   def top
-    @posts = Post.where(cached_votes_up: :desc).limit(100)
+    @posts = Post.order(cached_votes_up: :desc).limit(100)
   end
 
   def newest
