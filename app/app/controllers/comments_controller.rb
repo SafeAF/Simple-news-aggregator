@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all.order(:votes_score).limit(2)
+    @comments = Comment.order(created_at: :desc).limit(250)
   end
 
   # GET /comments/1 or /comments/1.json

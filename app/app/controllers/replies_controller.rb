@@ -30,7 +30,7 @@ class RepliesController < ApplicationController
   end
   # GET /replies or /replies.json
   def index
-    @replies = Reply.all
+    @replies = Reply.order(created_at: :desc).limit(250)
   end
 
   # GET /replies/1 or /replies/1.json

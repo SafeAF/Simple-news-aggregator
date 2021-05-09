@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.all.limit(250)
+    @posts = Post.order(created_at: :desc).limit(250)
   end
 
   # GET /posts/1 or /posts/1.json
