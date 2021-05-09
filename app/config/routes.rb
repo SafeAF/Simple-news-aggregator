@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
 
  get 'top' => 'posts#top'
- 
+ get 'newest' => 'posts#newest'
+
   resources :posts do
     member do
       put 'like' => 'posts#like'

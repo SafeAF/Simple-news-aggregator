@@ -8,7 +8,8 @@
     <ul class="navbar-nav ml-auto">
 
 
-      <%= link_to "Top", root_path,  class: "btn  text-light btn-outline-success mx-2" %>
+      <%= link_to "Newest", newest_path,  class: "btn  text-light btn-outline-success mx-2" %>
+      <%= link_to "Top", top_path,  class: "btn  text-light btn-outline-success mx-2" %>
 
       <% if user_signed_in? %>
         
@@ -16,7 +17,7 @@
  
         
         <div class="dropdown show mx-2">
-          <a class="btn btn-success text-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
+          <a class="btn btn-outline-success text-light dropdown-toggle dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <%= link_to "Profile", current_user, class: "dropdown-item" %>
