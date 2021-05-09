@@ -17,7 +17,7 @@
  
         
         <div class="dropdown show mx-2">
-          <a class="btn btn-outline-success text-light dropdown-toggle dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
+          <a class="btn  text-light dropdown-toggle dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <%= link_to "Profile", current_user, class: "dropdown-item" %>
@@ -25,7 +25,7 @@
             <%= link_to "Logout", destroy_user_session_path, 
           method: :delete, class: "dropdown-item" %>
        
-
+ 
           </div>
         </div>
 
