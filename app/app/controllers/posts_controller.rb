@@ -6,6 +6,14 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
 
+  def top
+    @posts = Post.where(cached_votes_up: :desc).limit(100)
+  end
+
+  def newest
+    @posts = Post.order(created_at: :desc).limit(100)
+  end
+
  def like
 
     if current_user.voted_for? @post
