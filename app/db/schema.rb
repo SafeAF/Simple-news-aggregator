@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 2021_05_06_140057) do
   end
 
   create_table "controls", force: :cascade do |t|
-    t.boolean "registrations_enabled"
+    t.boolean "registrations_enabled", default: true
+    t.boolean "post_decay_on", default: true
+    t.integer "post_decay", default: 3600
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

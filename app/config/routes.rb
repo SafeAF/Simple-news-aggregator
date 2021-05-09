@@ -2,9 +2,14 @@ Rails.application.routes.draw do
 
   get "u/:username" => "profile#index", as: :profile
  
+
+
+ get 'top' => 'posts#top'
+ 
   resources :posts do
     member do
       put 'like' => 'posts#like'
+
     end
 
   	resources :comments do

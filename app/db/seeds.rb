@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 control = Control.create(registrations_enabled: true)
+control.post_decay_on = true
+control.post_decay = 3600
 control.save!
+
+
 
