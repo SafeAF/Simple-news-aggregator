@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
 	def index
-		 @posts = Post.order(upvotes: :desc, created_at: :desc).limit(30)
+		 @newest_posts = Post.order(created_at: :desc).limit(10)
+		 #@top_posts = Post.order(cached_votes_up: :desc).limit(30)
 	end
 end
