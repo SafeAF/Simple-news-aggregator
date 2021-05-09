@@ -10,8 +10,12 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     if current_user.voted_for? @comment
       @comment.unliked_by current_user
+      @comment.user.positive_karma -= 1
+      @comment.user.save!
     else
       @comment.liked_by current_user
+      @comment.user.positive_karma += 1
+      @comment.user.save!
     end
 
     respond_to do |format|
@@ -27,9 +31,13 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     if current_user.voted_for? @comment
-      @comment.disliked_by current_user
-    else
       @comment.undisliked_by current_user
+      @comment.user.negative_karma -= 1
+      @comment.user.save!
+    else
+      @comment.disliked_by current_user
+      @comment.user.negative_karma += 1
+      @comment.user.save!
     end
 
     respond_to do |format|
