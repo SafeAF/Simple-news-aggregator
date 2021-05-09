@@ -17,11 +17,11 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= Post.find(comment.post_id) %></td>
+        <td><%= link_to Post.find(comment.post_id).headline.truncate(20), post_path(comment.post_id) %></td>
         <td><%= comment.upvotes %></td>
         <td><%= comment.downvotes %></td>
         <td><%= User.find(comment.user_id).username %></td>
-        <td><%= comment.body %></td>
+        <td><%= comment.body.truncate(45) %></td>
        
         <% if current_user.moderator %>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
