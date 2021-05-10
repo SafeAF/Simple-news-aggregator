@@ -14,14 +14,20 @@ class PostUpvoteDecayJob < ApplicationJob
   def perform(*args)
 		## Catch errors like nil case
   	posts = Post.where("cached_votes_up > 0")
+    unless posts.nil?
   	
     	posts.each do |post|
-    	
+        unless post.nil?
+        unless post.get_positives.nil?
+    	  unless post.get_positives.first.nil?
     		post.get_positives.first.destroy!
-    	
+    	  end
     	end
-  	end
-	
+    end
+  end
+  end
+  	
+	 end
 end
 
 PostUpvoteDecayJob.perform_now()
