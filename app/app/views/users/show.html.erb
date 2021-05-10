@@ -24,8 +24,8 @@
 <%= link_to "Replies", users_replies_path(@user), class: "btn btn-success ml-2" %>
 
         <% if current_user.moderator %>
-                                                <%= link_to "Flag User", flagged_path(user_id: @user.id), method: :post, data: { confirm: 'Are you sure?' } %>
-                                            <% end %> 
+	        <%= link_to "Flag User", flagged_path(user_id: @user.id), method: :post, data: { confirm: 'Are you sure?' } %>
+	    <% end %> 
 </div>
 </div>
 </div>

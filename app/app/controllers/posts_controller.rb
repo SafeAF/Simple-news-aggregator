@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show  destroy like ]
-  before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :authenticate_user!, except: [ :index, :show, :newest, :top ]
   before_action :is_moderator!, only: %i[ destroy edit update ]
   #before_action :set_post, only: [ :show ]
 
