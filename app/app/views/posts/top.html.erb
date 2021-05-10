@@ -28,6 +28,7 @@
               <p class="card-text"><%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> | Submitted by <%= link_to User.find_by_id(post.user_id).username , user_path(post.user.id) %>
 
                  <%= time_ago_in_words post.created_at %> ago</p>
+                 <p> <%= post.body.truncate(60) %> </p>
             </div>
           
 
@@ -49,10 +50,7 @@
                <% end %>
                 
 
-                                 <% if current_user && (post.user_id == current_user.id ) %>
-              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?', class: "btn btn-warning" } %>
-              
-              <% end %>
+                                 
         </div>
 
        </div>

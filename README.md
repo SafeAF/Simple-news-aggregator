@@ -41,3 +41,48 @@ export default environment
 
 require("channels")
 require("packs/main.js")
+
+
+# PostgreSQL 
+
+## Installing
+
+sudo apt-get install postgresql postgresql-client libpq5 libpq-dev
+sudo gem install pg
+
+## Setup
+
+su - postgres
+psql
+create role noppression with createdb login password 'securepassword';
+
+### Database.yml file
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: noppression_development
+  pool: 5
+  username: noppression
+  password: password1
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: noppression_test
+  pool: 5
+  username: noppression
+  password: password1
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: noppression_development
+  pool: 5
+  username: noppression
+  password: password1
+
+### Finishing up
+
+rake db:setup
