@@ -52,36 +52,35 @@ sudo gem install pg
 
 ## Setup
 
-su - postgres
-psql
-create role noppression with createdb login password 'securepassword';
+sudo -u postgres psql
+postgres=# \password
+postgres=# create user "noppression" with password 'a621c6144e5950838671fb2fa0064154';
+postgres=#  create database "noppression_prod" owner "noppression"; 
 
 ### Database.yml file
 
-development:
+default: &default
   adapter: postgresql
-  encoding: unicode
-  database: noppression_development
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: localhost
   username: noppression
-  password: password1
+  password: a621c6144e5950838671fb2fa0064154
+
+development:
+  <<: *default
+  database: noppression_dev
+
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: noppression_test
-  pool: 5
-  username: noppression
-  password: password1
-
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: noppression_development
-  pool: 5
-  username: noppression
-  password: 
+  <<: *default
+  database: noppression_prod
+
+
 
 ### Finishing up
 
