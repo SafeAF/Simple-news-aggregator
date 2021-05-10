@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_05_06_140057) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
-    t.integer "post_id", null: false
+    t.bigint "post_id", null: false
     t.integer "upvotes", default: 0
     t.integer "downvotes", default: 0
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.text "body"
     t.integer "cached_votes_total", default: 0
     t.integer "cached_votes_score", default: 0
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_140057) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "url"
     t.integer "upvotes", default: 0
     t.integer "total_comments", default: 0
@@ -67,10 +70,10 @@ ActiveRecord::Schema.define(version: 2021_05_06_140057) do
   end
 
   create_table "replies", force: :cascade do |t|
-    t.integer "comment_id", null: false
+    t.bigint "comment_id", null: false
     t.integer "upvotes", default: 0
     t.integer "downvotes", default: 0
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

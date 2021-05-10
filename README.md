@@ -81,7 +81,7 @@ production:
   database: noppression_development
   pool: 5
   username: noppression
-  password: password1
+  password: 
 
 ### Finishing up
 
