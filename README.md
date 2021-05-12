@@ -6,7 +6,11 @@
 
 ## Install Yarn
 
-add repository from yarn install webpage
+### Add repository from yarn install webpage
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
 apt-get update && apt-get install yarn
 
 ## Install bootstrap jquery and popper.js
@@ -85,3 +89,10 @@ production:
 ### Finishing up
 
 rake db:setup
+
+
+# Deploying 
+
+## Clone
+
+ git clone https://github.com/BareMetalNetworks/Noppression-news noppression.news
