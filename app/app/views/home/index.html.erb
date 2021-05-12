@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-4">
               <p class="card-text"> 
-                    <%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> | Submitted by <%= link_to User.find_by_id(post.user_id).username , user_path(post.user.id) %>
+                    <%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> | <%= link_to User.find_by_id(post.user_id).username , user_path(post.user.id) %>
 
                  <%= time_ago_in_words post.created_at %> ago
             </div>
