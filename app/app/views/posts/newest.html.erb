@@ -18,7 +18,7 @@
 
 
 
-                 <%= link_to post.headline.capitalize, post.url.truncate(100) %></h5>
+                 <%= link_to post.headline.capitalize, post.url %></h5>
             </div>
           </div>
 
@@ -35,7 +35,7 @@
 
             <div class="col-8 pull-right">
               <div class="url float-right">
-             <p class="card-text"> (<%= post.url %>) </p>
+             <p class="card-text"> (<%= post.url.truncate(40) %>) </p>
               </div>
 
           </div>
