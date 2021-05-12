@@ -24,25 +24,33 @@
 
 
           <div class="row">
-            <div class="col-4">
+            <div class="col-6">
               <p class="card-text"> 
-                    <%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> | <%= link_to User.find_by_id(post.user_id).username , user_path(post.user.id) %>
+                    <%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> 
 
-                 <%= time_ago_in_words post.created_at %> ago
+                 
             </div>
           
 
 
-            <div class="col-8 pull-right">
+            <div class="col-6 pull-right">
               <div class="url float-right">
              <p class="card-text"> (<%= post.url.truncate(40) %>) </p>
               </div>
 
           </div>
         </div>
+
+           <div class="row">
+                      <div class="col-12 mt-1">
+                    <p class="post-user-submit-time">Submitted by <%= link_to User.find_by_id(post.user_id).username , user_path(post.user.id) %> 
+
+                 <%= time_ago_in_words post.created_at %> ago</p>
+               </div>
+               </div>
     
        <div class="row mt-2">
-          <div class="col-4">
+          <div class="col-6">
 
 
                <%= link_to post, class: "text-light btn btn-success btn-sm" do %>
