@@ -96,3 +96,15 @@ rake db:setup
 ## Clone
 
  git clone https://github.com/BareMetalNetworks/Noppression-news noppression.news
+
+
+
+ # Operating
+
+ ## rails console
+
+ RAILS_ENV=production bundle exec rails c
+
+ or, on noppression server use
+
+ console 

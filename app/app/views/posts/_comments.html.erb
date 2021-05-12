@@ -24,7 +24,7 @@
                                       <div class="reply ml-3"> 
                                         <i class="fa fa-reply text-danger"></i> 
                                           <%= link_to 'Reply', new_post_comment_reply_path(post_id: @post.id, comment_id: c.id), class: " text-danger" %>
-                                          <% if current_user.admin %>
+                                          <% if current_user && current_user.admin %>
                                                 <%= link_to 'Destroy', comment_path(c.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                                           <% end %>
                                         
@@ -57,7 +57,7 @@
       
                                <div class="row pull-right ">  
                                     <div class="col-12  d-flex">
-                                           <% if current_user.moderator %>
+                                           <% if current_user && current_user.moderator %>
                                                 <%= link_to "Flag User", flagged_path(user_id: c.user.id), method: :post %>
                                             <% end %> 
 
@@ -85,7 +85,7 @@
 
                                                      </h5> 
                                                 <p class="mt-1"><%= time_ago_in_words reply.created_at %> ago </p>
-                                                <% if current_user.admin %>
+                                                <% if current_user &&current_user.admin %>
                                                 <%= link_to ' Destroy', reply_path(reply.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "ml-1" %>
                                           <% end %>
                                             </div>
@@ -95,7 +95,7 @@
 
                                      <div class="row  ">  
                                     <div class="col-12  d-flex">
-                                           <% if current_user.moderator %>
+                                           <% if current_user &&current_user.moderator %>
                                                 <%= link_to "Flag User", flagged_path(user_id: c.user.id), method: :post, data: { confirm: 'Are you sure?' } %>
                                             <% end %> 
 
