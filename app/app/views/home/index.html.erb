@@ -24,7 +24,7 @@
 
 
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <p class="card-text"> 
                     <%= render 'posts/like_link', post: post %> <%= render 'posts/likes', post: post %> 
 
@@ -33,9 +33,9 @@
           
 
 
-            <div class="col-6 pull-right">
+            <div class="col-8 pull-right">
               <div class="url float-right">
-             <p class="card-text"> (<%= post.url.truncate(40) %>) </p>
+             <p class="card-text"> (<%= post.url.truncate(30) %>) </p>
               </div>
 
           </div>
