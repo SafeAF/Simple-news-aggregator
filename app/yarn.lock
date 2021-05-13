@@ -7180,6 +7180,26 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-antonio@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/typeface-antonio/-/typeface-antonio-1.0.1.tgz#7da4e2c6eff8936f95934ea67fb1d3049ee11111"
+  integrity sha512-mhQtGI+9ocHdwRbi4vCxOyKn483AMDN6IOQWxOSzaSCus2LdgWDnhcz+9S6GjN7j6TV7kdbbYVtpbQSo4K5+VA==
+
+typeface-girassol@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-girassol/-/typeface-girassol-1.1.13.tgz#6c0136d2746d797484680dec132ffa0096db9d03"
+  integrity sha512-KjzGekYzVW34vri/rXLgGiQIuJ9bBlF/nTZUuLA9rZ1uuSqJjWlIZBEYtzCExyVqGdckb1pwzuBfpAarJ5x8+g==
+
+typeface-josefin-sans@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-josefin-sans/-/typeface-josefin-sans-1.1.13.tgz#23cf30417b8aaa47f6decb3097f226957f7c5a04"
+  integrity sha512-RyUjn3ncgiB+MW0LcDTSVSOYKDzuOy5lq0yIdp6XYzlQeLf5PLF4UU4a/4Crjy3sZqkcHUvNq+4HMaapO4sUsA==
+
+typeface-source-sans-pro@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-source-sans-pro/-/typeface-source-sans-pro-1.1.13.tgz#a7757542b8c301c26322acb0c8b97cc1a12cf91e"
+  integrity sha512-eCczLh0FYByjVoMxZVDfSSTI8A6qJOBJftgWBVJL63AuemQTTvMU8DEk6ud/TQhkbIwWZ3A7ll/NfS9yI0lIrQ==
+
 unbox-primitive@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"

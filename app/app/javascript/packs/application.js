@@ -10,8 +10,10 @@ import "channels"
 
 
 require("channels")
-
-
+require("typeface-antonio")
+require("typeface-source-sans-pro")
+require("typeface-josefin-sans")
+require("typeface-girassol")
 
 
 Rails.start()
