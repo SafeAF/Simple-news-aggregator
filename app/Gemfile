@@ -8,6 +8,7 @@ gem 'devise'
 gem 'rexml'
 gem 'acts_as_votable'
 gem 'pg'
+gem 'domainator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
