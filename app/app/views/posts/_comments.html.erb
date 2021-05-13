@@ -69,7 +69,7 @@
                                 </div> 
 
 
-                                <%= c.body %> 
+                                <div class="mt-2"><%= c.body %> </div>
 
                                 <% if c.replies.any? %>
                                   <% c.replies.order(created_at: :desc).each do |reply| %>
