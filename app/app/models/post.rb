@@ -8,4 +8,13 @@ class Post < ApplicationRecord
  
   validates :url, url: true
   validates :body, length: { maximum: 10000 }
+
+  before_create :set_domain
+
+  private
+
+  def set_domain
+  	require 'domainator'
+  	self.domain = Domainator.parse(self.url)
+  end
 end
