@@ -12,6 +12,7 @@ class PostUpvoteDecayJob < ApplicationJob
   end
 
   def perform(*args)
+    if Control.first.post_decay_on
 		## Catch errors like nil case
   	posts = Post.where("cached_votes_up > 0")
     unless posts.nil?
@@ -26,7 +27,7 @@ class PostUpvoteDecayJob < ApplicationJob
     end
   end
   end
-  	
+  	end
 	 end
 end
 

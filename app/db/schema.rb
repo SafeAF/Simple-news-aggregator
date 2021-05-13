@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_131447) do
     t.integer "post_decay", default: 3600
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "flagged_user_removal"
+    t.boolean "flagged_user_removal", default: true
   end
 
   create_table "flagged_users", force: :cascade do |t|
