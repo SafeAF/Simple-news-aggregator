@@ -10,11 +10,11 @@
 
       <%= link_to "Newest", newest_path,  class: "btn  text-light btn-outline-success mx-2" %>
       <%= link_to "Top", top_path,  class: "btn  text-light btn-outline-success mx-2" %>
-
-      <% if user_signed_in? %>
-        
         <%= link_to "Submit", new_post_path, class: "btn text-light btn-outline-success mx-2" %>
  
+      <% if user_signed_in? %>
+        
+
         
         <div class="dropdown show mx-2">
           <a class="btn  text-light dropdown-toggle dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"><%= current_user.username %> </a>
