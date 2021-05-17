@@ -4,8 +4,8 @@ class Comment < ApplicationRecord
   has_many :replies, dependent: :destroy
 
   acts_as_votable
-  has_rich_text :content
   
-  #validates_presence_of :body
+  
+  validates_presence_of :body
   validates :body, length: { maximum: 1000 }
 end
