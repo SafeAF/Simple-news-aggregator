@@ -5,8 +5,7 @@ class Post < ApplicationRecord
   acts_as_votable
   has_rich_text :content
   
-  validates_presence_of :url, :headline, :user_id
- 
+  validates_presence_of :url, :headline, :user_id, :body, :content
   validates :url, url: true
   validates :body, length: { maximum: 10000 }
 
