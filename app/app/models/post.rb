@@ -3,7 +3,8 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   acts_as_votable
-
+  has_rich_text :content
+  
   validates_presence_of :url, :headline, :user_id
  
   validates :url, url: true

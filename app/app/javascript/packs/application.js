@@ -14,6 +14,8 @@ require("typeface-antonio")
 require("typeface-source-sans-pro")
 require("typeface-josefin-sans")
 require("typeface-girassol")
+require("trix")
+require("@rails/actiontext")
 
 
 Rails.start()
@@ -23,3 +25,6 @@ ActiveStorage.start()
 global.$ = jQuery;
 
 import "bootstrap"
+
+require("trix")
+require("@rails/actiontext")
