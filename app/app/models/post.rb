@@ -15,6 +15,10 @@ class Post < ApplicationRecord
 
   def set_domain
   	require 'domainator'
-  	self.domain = Domainator.parse(self.url)
+    if self.url =~ /(\w+\.news)$/
+      self.domain = $1
+    else
+    	self.domain = Domainator.parse(self.url)
+    end
   end
 end
