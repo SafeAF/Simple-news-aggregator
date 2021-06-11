@@ -57,7 +57,7 @@
 
 
                <%= link_to post, class: "text-light btn btn-success btn-sm" do %>
-                <%= post.comments.count + post.replies.count %> <%= "comment".pluralize(post.comments.count) %>
+                <%= post.comments.count  %> <%= "comment".pluralize(post.comments.count) %>
                <% end %>
 
                 <% if current_user && current_user.moderator %>
