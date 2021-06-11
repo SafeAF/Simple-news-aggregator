@@ -18,8 +18,8 @@ class Post < ApplicationRecord
     if self.url =~ /(\w+\.news)$/
       self.domain = $1
     else
-    	#self.domain = Domainator.parse(self.url)
-      self.domain = 'test'
+    	self.domain = Domainator.parse(self.url)
+      #self.domain = 'test'
     end
   end
 end
